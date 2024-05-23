@@ -1,0 +1,11 @@
+services:
+  tests:
+    image: golang:1.22
+    stop_signal: SIGKILL
+    stdin_open: true
+    tty: true
+    working_dir: $PWD
+    volumes:
+      - $PWD:$PWD
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: go test ./... -v -count=1

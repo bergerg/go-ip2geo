@@ -1,0 +1,10 @@
+services:
+  ip2geo:
+    ports:
+      - "${PORT}:${PORT}"
+    build: .
+    environment:
+      - PORT=${PORT}
+      - DATASTORE_TYPE=${DATASTORE_TYPE}
+      - DATASTORE_URL=${DATASTORE_URL}
+      - RATE_LIMIT_RPS=${RATE_LIMIT_RPS}
